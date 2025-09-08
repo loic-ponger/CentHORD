@@ -7,14 +7,14 @@ CentHORD is a tool for the detection of dimeric or generic Higher Order repeats 
 
 ## Steps of the script
 
-1. **Load the distance matrix**
+1. Load the distance matrix
 
 Input can be a plain text file or an HDF5 file (--input_type).
 The file must contain a square distance matrix.
 
 Note:matrix file can be generated with `distance_matrix_full_blocks.py`
 
-2. **Diagonal detection – generic HOR detection (enabled with --detect_diagonals)**
+2. Diagonal detection – generic HOR detection (enabled with --detect_diagonals)
 
  - Local convolution to detect diagonals
 
@@ -69,7 +69,7 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
 ## Examples
 
 
-### for generic HOR (diagonales)
+### For generic HOR (diagonales)
 
 ```
 ./CentHORD__7.py --input test/test_DC.h5 \
@@ -86,7 +86,7 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
 
 
 
-### for dimeric HOR (checkboard)
+### For dimeric HOR (checkboard)
 
 ```
 ./CentHORD__7.py --input test/test_DC.h5 \
@@ -94,7 +94,7 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
                  --detect_checkerboard\
                  --checker_ncc_threshold 0.1
 ```
-### both
+### For both
 
 ```
 ./CentHORD__7.py --input test/test_DC.h5 \
