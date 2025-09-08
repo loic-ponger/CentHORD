@@ -27,7 +27,7 @@ Title lines should include: sequence name, contig name and the position along th
 ```
 
 
-Note: if monomers are searched with `get_monomers.py`, title line can be reformated with:
+Note: if monomers are searched with `get_monomers.py`, the title lines can be reformated with:
 
 ```
 awk '$1 ~ ">" {print $1, $1} $1 !~ ">" {print $0}' test.fst.monomer_seq_1.fst |\
