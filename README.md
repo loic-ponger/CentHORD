@@ -16,7 +16,7 @@ Note:matrix file can be generated with `distance_matrix_full_blocks.py`
 
 2. Diagonal detection – generic HOR detection (enabled with --detect_diagonals)
 
- 1. Local convolution to detect diagonals
+ - Local convolution to detect diagonals
 
 Small diagonals are detected using a convolution filter applied along 
 matrix diagonals (--conv_size).
@@ -31,7 +31,7 @@ Then, significant small diagonals that overlap are merged to form longer
 diagonals.
 
 
-2. Optional neighbor merging
+ - Optional neighbor merging
 
 Nearby long diagonals can be merged (--merge_diagonals). 
 Two thresholds (--merge_mode) are implemented to define "nearby" diagonales:
@@ -86,11 +86,26 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
                  --prewhiten_checker 0
 ```
 
-#![heatmap](test/test_DC_heatmap.png "heatmap")
-<img src="test/test_DC_heatmap.png" width="200" height="200" />
+
+
 ### for dimeric HOR (checkboard)
 
+```
+./CentHORD__7.py --input test/test_DC.h5 \
+                 --input_type h5 \
+                 --detect_diagonals \
+                 --conv_size 11 \
+                 --local_method robust \
+                 --local_size 11 \
+                 --sd_factor 2 \
+                 --merge_diagonals \
+                 --merge_gap 0 \
+                 --prewhiten_checker 0
+```
 
+## Ouput example
+
+<img src="test/test_DC_heatmap.png" width="200" height="400" />
 
 
 
