@@ -86,8 +86,8 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
                  --prewhiten_checker 0
 ```
 
-![heatmap](test/test_DC_heatmap.png "heatmap")
-
+#![heatmap](test/test_DC_heatmap.png "heatmap")
+<img src="test/test_DC_heatmap.png" width="200" height="200" />
 ### for dimeric HOR (checkboard)
 
 
