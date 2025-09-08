@@ -17,23 +17,23 @@ Each block is saved as a full dense matrix in its own HDF5 file.
 Input should be a fasta file with all individual monomers. 
 Title lines should include: sequence name, contig name and the position along the contig
 
-
-'''
+```
 ./distance_matrix_full_blocks.py -i test_DC.fst  -\
                                  -o "" \
                                  -t 200 \
                                  -l 200 \
                                  -s 200 # non-overlapping blocks
 
-'''
+```
 
 
 
 If needed, HDF5 files can be converted to TXT files:
-'''
+
+```
 ./convert_h5py_to_txt.py  -i test_DC.h5 -o test_DC.txt
 
-'''
+```
 
 
 **1. Load the distance matrix**
