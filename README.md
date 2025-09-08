@@ -7,14 +7,14 @@ CentHORD is a tool for the detection of dimeric or generic Higher Order repeats 
 
 ## Steps of the script
 
-1. Load the distance matrix
+1. **Load the distance matrix**
 
 Input can be a plain text file or an HDF5 file (--input_type).
 The file must contain a square distance matrix.
 
 Note:matrix file can be generated with `distance_matrix_full_blocks.py`
 
-2. Diagonal detection – generic HOR detection (enabled with --detect_diagonals)
+2. **Diagonal detection – generic HOR detection (enabled with --detect_diagonals)**
 
  - Local convolution to detect diagonals
 
@@ -40,7 +40,7 @@ Two thresholds (--merge_mode) are implemented to define "nearby" diagonales:
 The diagonals are saved into a CSV file.
 
 
-3. Filtering & selection
+3. **Filtering & selection**
 
 Non-overlapping longest diagonals are selected and saved into a CSV file.
 The main diagonal and diagonals with negative indices are excluded.
@@ -48,7 +48,7 @@ On the heatmap, only the lengths of the selected non-overlapping diagonals are l
 
 TODO: so far, overlaps are search on the y axis. Should be search on y and x axes simultaneously.
 
-4. Checkerboard detection – dimeric HOR detection (enabled with --detect_checkerboard)
+4. **Checkerboard detection – dimeric HOR detection (enabled with --detect_checkerboard)**
 
 Local NCC-based search (CHECKER_SIZE)
 
@@ -56,13 +56,11 @@ A checkerboard kernel is slided only along the main diagonal (or a band defined 
 At each position, a normalized cross-correlation (NCC) score is computed.
 Hits are retained if their score exceeds --checker_ncc_threshold.
 
-5. Merging small checkerboards
-
 Small overlapping checkerboard hits are merged into larger regions.
 Large checkerboard regions are written to a CSV file.
 
 
-6. Plot
+6. **Plot**
 
 On the heatmap with distances is generated. 
 Large diagonals and large cherckerboards are shown. 
@@ -103,9 +101,9 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
                  --prewhiten_checker 0
 ```
 
-## Ouput example
+## Output example
 
-<img src="test/test_DC_heatmap.png" width="200" height="400" />
+<img src="test/test_DC_heatmap.png" width="400"  />
 
 
 
