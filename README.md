@@ -91,6 +91,14 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
 ```
 ./CentHORD__7.py --input test/test_DC.h5 \
                  --input_type h5 \
+                 --detect_checkerboard\
+                 --checker_ncc_threshold 0.1
+```
+### both
+
+```
+./CentHORD__7.py --input test/test_DC.h5 \
+                 --input_type h5 \
                  --detect_diagonals \
                  --conv_size 11 \
                  --local_method robust \
@@ -98,10 +106,11 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
                  --sd_factor 2 \
                  --merge_diagonals \
                  --merge_gap 0 \
-                 --prewhiten_checker 0
+                 --prewhiten_checker 0 \
+                 --detect_checkerboard\
+                 --checker_ncc_threshold 0.1
 ```
-
-## Output example
+### Output
 
 <img src="test/test_DC_heatmap.png" width="400"  />
 
