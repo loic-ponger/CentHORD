@@ -6,7 +6,7 @@ CentHORD is a tool for the detection of dimeric or generic Higher Order repeats 
 
 
 
-**0. Distances**
+**0. Distance calculation**
 
 Distance file can be generated with `distance_matrix_full_blocks.py`.
 The script computes dense distance matrices for sequences grouped by contig.
@@ -36,7 +36,7 @@ If needed, HDF5 files can be converted to TXT files:
 ```
 
 
-**1. Load the distance matrix**
+**1. Distance loading**
 
 Input can be a plain text file or an HDF5 file (--input_type).
 The file must contain a square distance matrix.
