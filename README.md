@@ -1,7 +1,4 @@
-# CentHORD
-
-CentHORD: Centromere Higher Order Repeat Detector
-
+# CentHORD: Centromere Higher Order Repeat Detector
 
 CentHORD is a tool for the detection of dimeric or generic Higher Order repeats (HOR)  in alpha satellite regions (centromeres).
 
