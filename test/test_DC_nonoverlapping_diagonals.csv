@@ -1,0 +1,2 @@
+diag_id,start_row,end_row,start_col,end_col,length,mid_row,mid_col,mean_distance
+6.0,8.0,135.0,14.0,141.0,128.0,72.0,78.0,5.5859375
