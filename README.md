@@ -7,6 +7,38 @@ CentHORD is a tool for the detection of dimeric or generic Higher Order repeats 
 
 ## Steps of the script
 
+
+
+**0. Distances**
+
+Distance file can be generated with `distance_matrix_full_blocks.py`.
+The script computes dense distance matrices for sequences grouped by contig.
+If the number of sequences in a contig exceeds a threshold, split them into
+overlapping blocks of size L (block_length) with a step size S (step_size).
+Each block is saved as a full dense matrix in its own HDF5 file.
+
+Input should be a fasta file with all individual monomers. 
+Title lines should include: sequence name, contig name and the position along the contig
+
+
+'''
+./distance_matrix_full_blocks.py -i test_DC.fst  -\
+                                 -o "" \
+                                 -t 200 \
+                                 -l 200 \
+                                 -s 200 # non-overlapping blocks
+
+'''
+
+
+
+If needed, HDF5 files can be converted to TXT files:
+'''
+./convert_h5py_to_txt.py  -i test_DC.h5 -o test_DC.txt
+
+'''
+
+
 **1. Load the distance matrix**
 
 Input can be a plain text file or an HDF5 file (--input_type).
@@ -14,7 +46,7 @@ The file must contain a square distance matrix.
 
 Note:matrix file can be generated with `distance_matrix_full_blocks.py`
 
-2. Diagonal detection – generic HOR detection (enabled with --detect_diagonals)
+**2. Diagonal detection – generic HOR detection (enabled with --detect_diagonals)**
 
  - Local convolution to detect diagonals
 
@@ -40,7 +72,7 @@ Two thresholds (--merge_mode) are implemented to define "nearby" diagonales:
 The diagonals are saved into a CSV file.
 
 
-3. **Filtering & selection**
+**3. Filtering & selection**
 
 Non-overlapping longest diagonals are selected and saved into a CSV file.
 The main diagonal and diagonals with negative indices are excluded.
@@ -48,7 +80,7 @@ On the heatmap, only the lengths of the selected non-overlapping diagonals are l
 
 TODO: so far, overlaps are search on the y axis. Should be search on y and x axes simultaneously.
 
-4. **Checkerboard detection – dimeric HOR detection (enabled with --detect_checkerboard)**
+**4. Checkerboard detection – dimeric HOR detection (enabled with --detect_checkerboard)**
 
 Local NCC-based search (CHECKER_SIZE)
 
@@ -60,7 +92,7 @@ Small overlapping checkerboard hits are merged into larger regions.
 Large checkerboard regions are written to a CSV file.
 
 
-6. **Plot**
+**6. Plot**
 
 On the heatmap with distances is generated. 
 Large diagonals and large cherckerboards are shown. 
@@ -110,21 +142,16 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
                  --detect_checkerboard\
                  --checker_ncc_threshold 0.1
 ```
+
 ### Output
 
 <img src="test/test_DC_heatmap.png" width="400"  />
 
 
 
-## Installation
-
-
-## Test
 
 
 
-
-## Syntaxe
 
 
 
