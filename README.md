@@ -7,7 +7,7 @@ CentHORD is a tool for the detection of dimeric or generic Higher Order repeats 
 
 ## Steps of the script
 
-1. Load the distance matrix
+**1. Load the distance matrix**
 
 Input can be a plain text file or an HDF5 file (--input_type).
 The file must contain a square distance matrix.
