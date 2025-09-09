@@ -111,7 +111,7 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
 ### For generic HOR (diagonales)
 
 ```
-./CentHORD__7.py --input test/test_DC.h5 \
+./CentHORD__8.py --input test/test_DC.h5 \
                  --input_type h5 \
                  --detect_diagonals \
                  --conv_size 11 \
@@ -128,7 +128,7 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
 ### For dimeric HOR (checkboard)
 
 ```
-./CentHORD__7.py --input test/test_DC.h5 \
+./CentHORD__8.py --input test/test_DC.h5 \
                  --input_type h5 \
                  --detect_checkerboard\
                  --checker_ncc_threshold 0.1
@@ -136,7 +136,7 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
 ### For both
 
 ```
-./CentHORD__7.py --input test/test_DC.h5 \
+./CentHORD__8.py --input test/test_DC.h5 \
                  --input_type h5 \
                  --detect_diagonals \
                  --conv_size 11 \
