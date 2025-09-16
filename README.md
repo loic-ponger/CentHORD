@@ -58,14 +58,14 @@ Note:matrix file can be generated with `distance_matrix_full_blocks.py`
  - Local convolution to detect diagonals
 
 Small diagonals are detected using a convolution filter applied along 
-matrix diagonals (--conv_size).
+matrix diagonals (--conv_size, default=5).
 For each point in the score matrix, the local mean (or median) and the 
 local variability (standard deviation or MAD) are computed for each 
-position.
-The size of local environment can be adjusted (--local_size) and the 
+position. With the option "--local_method" set to "robust" the program will used median+MAD.
+The size of local environment can be adjusted (--local_size, default=5) and the 
 score at each position is compared to the expected score from the background level.
 diagonales with a score X time above the standard deviation are 
-considered as significant (--sd_factor).
+considered as significant (--sd_factor, default=2).
 Then, significant small diagonals that overlap are merged to form longer 
 diagonals.
 
@@ -73,9 +73,9 @@ diagonals.
  - Optional neighbor merging
 
 Nearby long diagonals can be merged (--merge_diagonals). 
-Two thresholds (--merge_mode) are implemented to define "nearby" diagonales:
-- diagonals separated by less than N monomers (--merge_gap)
-- diagonals separated by less than N % of the shorter diagonal (--merge_gap again) 
+Two thresholds (--merge_mode, default="fixed") are implemented to define "nearby" diagonales:
+- diagonals separated by less than N monomers (--merge_gap "fixed", default=5)
+- diagonals separated by less than N % of the shorter diagonal (--merge_gap "relative") 
 The diagonals are saved into a CSV file.
 
 
@@ -111,7 +111,7 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
 ### For generic HOR (diagonales)
 
 ```
-./CentHORD__8.py --input test/test_DC.h5 \
+./CentHORD__9.py --input test/test_DC.h5 \
                  --input_type h5 \
                  --detect_diagonals \
                  --conv_size 11 \
@@ -128,7 +128,7 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
 ### For dimeric HOR (checkboard)
 
 ```
-./CentHORD__8.py --input test/test_DC.h5 \
+./CentHORD__9.py --input test/test_DC.h5 \
                  --input_type h5 \
                  --detect_checkerboard\
                  --checker_ncc_threshold 0.1
@@ -136,7 +136,7 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
 ### For both
 
 ```
-./CentHORD__8.py --input test/test_DC.h5 \
+./CentHORD__9.py --input test/test_DC.h5 \
                  --input_type h5 \
                  --detect_diagonals \
                  --conv_size 11 \
