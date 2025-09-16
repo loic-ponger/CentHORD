@@ -105,6 +105,16 @@ On the heatmap with distances is generated.
 Large diagonals and large cherckerboards are shown. 
 An additional barplot above the heatmap shows the NCC score profile, aligned to sequence positions.
 
+
+
+## Versions
+
+9. version 9:
+   - heatmap can be plot with relative (default) or fixed color scale. In this later case, the users have to fix the minimal and maximal values
+   - the program calculate the mean distance in the background of each diagonal. 
+    Two  values are calculated: with vs. without (background only) the diagonal 
+
+
 ## Examples
 
 
