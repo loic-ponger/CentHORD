@@ -113,8 +113,15 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
    - heatmap can be plot with relative (default) or fixed color scale. In this later case, the users have to fix the minimal and maximal values
    - the program calculate the mean distance in the background of each diagonal. 
     Two  values are calculated: with vs. without (background only) the diagonal 
-
-
+10. version 10:
+   - heatmaps are squares
+   - empty CSV file is created (headers are written) even if no diagonal is detected
+   - image definition  can be changed (`--dpi` option)
+   - for diagonals, CSV files include mean/median/variance distances for 
+   diagonals and mean/median distances for neighbors (defined as X 
+   monomers around the diagonals, Xcan be changed with potion 
+   `--neighbor_distance`)
+   
 ## Examples
 
 
