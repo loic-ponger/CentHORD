@@ -116,10 +116,10 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
 10. version 10:
    - heatmaps are squares
    - empty CSV file is created (headers are written) even if no diagonal is detected
-   - image definition  can be changed (`--dpi` option)
+   - image definition can be changed (`--dpi` option)
    - for diagonals, CSV files include mean/median/variance distances for 
    diagonals and mean/median distances for neighbors (defined as X 
-   monomers around the diagonals, Xcan be changed with potion 
+   monomers around the diagonals, X can be changed with the option 
    `--neighbor_distance`)
    
 ## Examples
