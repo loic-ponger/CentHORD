@@ -121,6 +121,14 @@ An additional barplot above the heatmap shows the NCC score profile, aligned to 
    diagonals and mean/median distances for neighbors (defined as X 
    monomers around the diagonals, X can be changed with the option 
    `--neighbor_distance`)
+11. version 11:
+  - Multiphred allowed
+  - Batch mode taking as input a dir of multiple h5 files.
+12. version 12:
+  - Non-overlapping diagonals corrected
+  - Output TSV changed, some cols were added or deleted.
+  - Combined_tsv argument allows to have results from all block in 3 tsv files (checkerboard, diagonals and non-overlapping diagonals)
+  - peel mod is now default
    
 ## Examples
 
